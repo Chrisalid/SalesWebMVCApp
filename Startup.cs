@@ -28,7 +28,8 @@ namespace SalesWebMVCApp
             services.AddControllersWithViews();
 
             services.AddDbContext<SalesWebMVCAppContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCAppContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCAppContext"),
+                    builder => builder.MigrationsAssembly("SalesWebMVCApp")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
