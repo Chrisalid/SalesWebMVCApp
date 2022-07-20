@@ -15,8 +15,8 @@ namespace SalesWebMVCApp.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.25")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("SalesWebMVCApp.Models.Department", b =>
@@ -94,6 +94,8 @@ namespace SalesWebMVCApp.Migrations
                     b.HasOne("SalesWebMVCApp.Models.Seller", "Seller")
                         .WithMany("Sales")
                         .HasForeignKey("SellerId");
+
+                    b.Navigation("Seller");
                 });
 
             modelBuilder.Entity("SalesWebMVCApp.Models.Seller", b =>
@@ -101,6 +103,18 @@ namespace SalesWebMVCApp.Migrations
                     b.HasOne("SalesWebMVCApp.Models.Department", "Department")
                         .WithMany("Sellers")
                         .HasForeignKey("DepartmentId");
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("SalesWebMVCApp.Models.Department", b =>
+                {
+                    b.Navigation("Sellers");
+                });
+
+            modelBuilder.Entity("SalesWebMVCApp.Models.Seller", b =>
+                {
+                    b.Navigation("Sales");
                 });
 #pragma warning restore 612, 618
         }
