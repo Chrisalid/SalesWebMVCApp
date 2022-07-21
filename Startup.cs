@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SalesWebMVCApp.Data;
 using SalesWebMVCApp.Models;
+using SalesWebMVCApp.Services;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,6 +34,7 @@ namespace SalesWebMVCApp
                     builder => builder.MigrationsAssembly("SalesWebMVCApp")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
