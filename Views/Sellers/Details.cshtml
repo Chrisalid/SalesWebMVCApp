@@ -9,33 +9,40 @@
 <div>
     <h4>Seller</h4>
     <hr/>
-    <dl class="dl-horizontal">
-        <dt>
+    <dl class="row">
+        <dt class="col-sm-3 text-right">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd>
+        <dd class="col-sm-9 text-left">
             @Html.DisplayFor(model => model.Name)
         </dd>
         <br>
-        <dt>
+        <dt class="col-sm-3 text-right">
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-        <dd>
+        <dd class="col-sm-9 text-left">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <br>
-        <dt>
+        <dt class="col-sm-3 text-right">
             @Html.DisplayNameFor(model => model.BirthDate)
         </dt>
-        <dd>
+        <dd class="col-sm-9 text-left">
             @Html.DisplayFor(model => model.BirthDate)
         </dd>
         <br>
-        <dt>
+        <dt class="col-sm-3 text-right">
             @Html.DisplayNameFor(model => model.BaseSalary)
         </dt>
-        <dd>
+        <dd class="col-sm-9 text-left">
             @Html.DisplayFor(model => model.BaseSalary)
+        </dd>
+        <br>
+        <dt class="col-sm-3 text-right">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class="col-sm-9 text-left">
+            @Html.DisplayFor(model => model.Department.Name)
         </dd>
     </dl>
     <div>
